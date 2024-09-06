@@ -129,7 +129,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(W, H);
+  var cnv = createCanvas(W, H);
+  cnv.parent("canvas");
   background(bckColor);
   angleMode(DEGREES);
 }
@@ -154,4 +155,5 @@ function mousePressed(event) {
   if (tomatoObj.isInside(event.x, event.y)) {
     tomatoObj.splat();
   }
+  console.log;
 }
