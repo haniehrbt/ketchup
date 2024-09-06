@@ -1,14 +1,14 @@
 let tomatoImg, splatTomatoImg;
-let W = 600,
-  H = 200;
+let W = 1000,
+  H = 300;
 let bckColor = "yellow";
-let maxSplats = 2;
+let maxSplats = 3;
 
 class KetchupJar {
   constructor() {
     this.x = -10;
     this.y = 30;
-    this.size = 100;
+    this.size = 200;
     this.prevX = this.x;
     this.prevY = this.y;
     this.prevSize = this.size;
@@ -59,26 +59,18 @@ let jar = new KetchupJar();
 
 class Tomato {
   constructor() {
-    this.X = 0;
-    this.Y = 0;
-    this.Vx = 0.1;
-    this.Vy = 0.1;
-    this.X0 = W / 3;
     this.Y0 = H + 5;
-    this.Vx0 = 0.5;
-    this.Vy0 = -4.5;
     this.Ax = 0;
-    this.Ay = 0.03;
-    this.Size = 50;
+    this.Ay = 0.08;
+    this.Size = 120;
     this.PrevX = this.X;
     this.PrevY = this.Y;
-    this.isSplat = false;
-    this.t = 0;
+    this.reset();
   }
 
   reset() {
     this.Vx0 = (Math.random() - 0.5) * 3;
-    this.Vy0 = Math.random() - 4.5;
+    this.Vy0 = Math.random() * 2 - 9.5;
     this.X0 = ((Math.random() - 0.5) * W) / 3 + (3 * W) / 5;
     this.X = this.X0;
     this.Y = this.Y0;
