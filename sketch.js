@@ -152,8 +152,7 @@ function draw() {
 }
 
 function mousePressed(event) {
-  if (tomatoObj.isInside(event.x, event.y)) {
+  if (!tomatoObj.isSplat && tomatoObj.isInside(event.offsetX, event.offsetY)) {
     tomatoObj.splat();
   }
-  console.log;
 }
